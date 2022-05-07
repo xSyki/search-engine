@@ -24,12 +24,20 @@ function Results() {
     }
 
     useEffect(() => {
-        setResults(exampleResults);
+        // setResults(exampleResults);
 
-        // fetch(`https://falonsearch.com/${searchParam}`)
-        // .then(response => response.json())
-        // .then(data => setResults(data));
+        fetch(`https://en.wikipedia.org/w/api.php?action=opensearch&search=${searchParam}&limit=10&namespace=0&format=json&origin=*`)
+            .then(response => response.json())
+            .then(data => setResults(data))
+            .catch(e => console.log(e));
     }, [])
+
+    useEffect(() => {
+        fetch(`https://en.wikipedia.org/w/api.php?action=opensearch&search=${searchParam}&limit=10&namespace=0&format=json&origin=*`)
+            .then(response => response.json())
+            .then(data => setResults(data))
+            .catch(e => console.log(e));
+    }, [searchParam])
 
     return (
         <div className="results">
@@ -44,9 +52,10 @@ function Results() {
                 </div>
             </div>
             <div className="results__section">
-                {results && results.map(result => {
+                {results && results[1].map((title, index) => {
                     return (
-                        <Result result={result} key={result.id} />
+                        <Result result={{ title, url: results[3][index] }} key={title} />
+                        // <Result result={result} key={result.id} />
                     )
                 })}
             </div>

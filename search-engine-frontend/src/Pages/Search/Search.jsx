@@ -6,7 +6,7 @@ function Search() {
 
     const navigate = useNavigate();
 
-    const [searchText, setSearchText] = useState();
+    const [searchText, setSearchText] = useState('');
 
     const submitSearch = (e) => {
         e.preventDefault();

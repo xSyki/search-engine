@@ -17,6 +17,8 @@
     &__search {
         display: flex;
         flex-wrap: wrap;
+
+        gap: 20px;
     }
 
     &__search-bar {
@@ -28,7 +30,6 @@
         border-radius: 3rem;
     
         padding: 5px 10px 5px 10px;
-
     }
     
     &__icon {
@@ -53,8 +54,6 @@
     }
 
     &__submit-btn {
-        margin-left: 25px;
-
         border: none;
         border-radius: 0.5rem;
 

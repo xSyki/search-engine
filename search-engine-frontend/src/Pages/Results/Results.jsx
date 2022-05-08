@@ -5,8 +5,6 @@ import { useNavigate, useParams } from 'react-router-dom';
 
 import Result from './Result/Result';
 
-import exampleResults from '../../exampleDataResults';
-
 function Results() {
 
     const navigate = useNavigate();

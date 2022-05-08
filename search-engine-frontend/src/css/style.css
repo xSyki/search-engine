@@ -240,6 +240,7 @@ body {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  gap: 20px;
 }
 
 .top-bar__search-bar {
@@ -277,7 +278,6 @@ body {
 }
 
 .top-bar__submit-btn {
-  margin-left: 25px;
   border: none;
   border-radius: 0.5rem;
   background-color: var(--gray-1);
